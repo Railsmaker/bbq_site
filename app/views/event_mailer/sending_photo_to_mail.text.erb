@@ -1,0 +1,9 @@
+<%= t('event_mailer.new_photo_event') %>
+
+<%= @photo.photo.url %>
+
+<%= t 'event_mailer.subscription.author' %>: <%= @photo.user.name %>
+
+<%= t 'event_mailer.subscription.event' %>: <%= @event.title %>
+<%= t 'event_mailer.subscription.datetime' %>: <%= l @event.datetime %>
+<%= t 'event_mailer.comment.owner' %>: <%= @event.user.name %>

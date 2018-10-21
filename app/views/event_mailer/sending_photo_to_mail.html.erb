@@ -1,0 +1,13 @@
+<h3><%= t('event_mailer.new_photo_event') %></h3>
+<h2><small><%= t ('event_mailer.subscription.event') %>:</small> <%= @event.title %></h2>
+<%= t ('event_mailer.subscription.datetime') %>
+<h4><%= l @event.datetime %></h4>
+<h4><small><%= t ('event_mailer.comment.owner') %>:</small> <%= @event.user.name %></h4>
+<%= link_to 'Перейти на страницу события', event_url(@event) %><br><br>
+<hr/>
+<p>
+  <%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>
+</p>
+
+
+

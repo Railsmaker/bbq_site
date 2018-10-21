@@ -1,0 +1,20 @@
+<%# Паршал для вывода отдельной фотографии %>
+<div class="event-photo buffer-both">
+
+  <% image_title = "добавил: #{ render partial: 'users/user', object: photo.user}" %>
+
+  <% if current_user_can_edit_photo?(photo) %>
+
+    <% image_title += "&nbsp;&nbsp; #{fa_icon('hand-o-right')}
+         #{link_to('удалить', event_photo_path(@event, photo),
+           method: :delete, data: {confirm: t('controllers.photos.photo_destroy')} )}"
+    %>
+
+  <% end %>
+
+  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
+    title: image_title, toggle: 'lightbox', gallery: 'example-gallery'
+  }%>
+</div>
+
+

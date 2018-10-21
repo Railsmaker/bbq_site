@@ -1,0 +1,45 @@
+<div class="col-sm-5">
+  <div class="col-sm-11">
+    <h3><%= t('template.log_in')%></h3>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+    <% end -%>
+      <div class="actions">
+        <%= f.submit t('template.button.log_in'), class: 'btn btn-primary' %>
+      </div>
+  <% end %>
+
+    <h4 class="buffer-top">Происхождение слова:
+      <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D0%B1%D0%B5%D0%BA%D1%8E">Барбекю</a>
+    </h4>
+    <p>Впервые это слово упоминается в 1553 году в книге «Хроника Перу» Сьеса де Леона как исп.
+    barbacoa[2][3].Существует предположение, что термин происходит от искаженного французского
+    словосочетания barbe à queue — «от морды до хвоста», то есть туша, зажаренная целиком на
+    вертеле или решетке.</p>
+
+    <div class="buffer-top buffer-bottom">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-7">
+  <div class="col-sm-9 buffer-top">
+    <%= image_tag(logo_template('bbq1.jpg'), class: 'logo-template img-thumbnail') %>
+  </div>
+</div>

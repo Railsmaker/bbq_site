@@ -1,0 +1,52 @@
+<% if devise_error_messages!.present? %>
+  <div class="alert  alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= devise_error_messages! %>
+  </div>
+<% end %>
+
+<div class="col-sm-5">
+  <div class="col-sm-11">
+    <h3><%= t('template.registration') %></h3>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true,  class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> символ минимум)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t('template.button.sign_up'), class: 'btn btn-primary'%>
+    </div>
+    <% end %>
+
+    <h4 class="buffer-top">Барбекю</h4>
+
+    <p>Способ приготовления продуктов питания (чаще всего мяса, сосисок) на жаре тлеющих
+    углей (изначально), горящего газа или электронагревателя; название самого блюда, а также
+    оборудования, используемого для этого</p>
+
+    <div class="buffer-top buffer-bottom">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-7">
+  <div class="col-sm-9 buffer-top">
+    <%= image_tag(logo_template('bbq2.jpg'), class: 'logo-template img-thumbnail') %>
+  </div>
+</div>

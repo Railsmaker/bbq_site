@@ -1,0 +1,8 @@
+<h3><%= t('.title')%></h3>
+----------
+<%= @comment.body %><br>
+<%= t('.author')%>: <%= @comment.user_name %><br>
+------------------------------------
+<%= t('.event')%> <%= @event.title %><br>
+<%= t('.datetime')%> <%= @event.datetime %><br>
+<%= t('.owner')%> <%= @event.user.name %><br>

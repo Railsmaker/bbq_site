@@ -1,0 +1,50 @@
+<% if devise_error_messages!.present? %>
+  <div class="alert  alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= devise_error_messages! %>
+  </div>
+<% end %>
+<h3><%= t('template.edit') %></h3>
+
+<div class="col-sm-5 buffer-top">
+  <div class="col-sm-11">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :password %> <i>(Новый пароль)</i><br />
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :current_password %> <i>(подтвердите изменения текущим паролем)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('template.button.update'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+    <p class="buffer-top"><span style="color:red;">*</span> <%= t('template.delete_account')%></p>
+
+<p><%= button_to t('template.button.cancel_account'), registration_path(resource_name), data: { confirm: "Уверены?" }, method: :delete, class: 'btn btn-primary' %></p>
+
+<%= link_to t('template.link.back'), :back %>
+
+  </div>
+</div>

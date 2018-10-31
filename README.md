@@ -61,4 +61,4 @@ bundle exec rails server
 ##
 <h4> Об авторе: </h4>
 Школа: <a href="http://goodprogrammer.ru/">хороший программист"</a><br/>
-Студент: Alexey V.Ryapisov <a href="https://raysmaker.github.io/person">Raysmaker</a>
+Alexey V.Ryapisov: <a href="https://raysmaker.github.io/cv/">Raysmaker</a>

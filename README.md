@@ -48,16 +48,13 @@ bundle exec rake db:migrate
 ```
 rails s
 ```
-URL: браузера:
-```
-http://localhost:3000
-```
+
 <h4>Старт приложения: </h4>
 
 ``` 
 bundle exec rails server 
 ```
-Адрес видимости: <a href="http://localhost:3000">http://localhost:3000 </a>
+
 ##
 <h4> Об авторе: </h4>
 Школа: <a href="http://goodprogrammer.ru/">хороший программист"</a><br/>

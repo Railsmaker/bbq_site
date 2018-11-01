@@ -1,5 +1,5 @@
 <h2><small>Site name: </small>BBQ</h2>
-<h4><small>Сайт: Любителей собраться на шашлыки</small></h4>
+<h4><small>Сайт: Любителей собраться на шашлыки <a href="https://bbq2018.herokuapp.com/">Образец</a></small></h4>
 <img src="https://cherrymonk.net/wp-content/uploads/5-20-880x528.jpg" width="355"/>
 <br />
 
